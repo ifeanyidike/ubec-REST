@@ -10,6 +10,7 @@ import {
     GET_ASSESSMENTS_SUCCESS,
     GET_ASSESSMENT_BY_SUBJECT_FAIL,
     GET_ASSESSMENT_BY_SUBJECT_LOADING,
+    GET_ASSESSMENT_BY_SUBJECT_RESET,
     GET_ASSESSMENT_BY_SUBJECT_SUCCESS,
     GET_ASSESSMENT_FAIL,
     GET_ASSESSMENT_LOADING,
@@ -59,6 +60,9 @@ export const assessmentBySubjectReducer = (state = {}, action) => {
 
         case GET_ASSESSMENT_BY_SUBJECT_FAIL:
             return { loading: false, error: action.payload }
+
+        case GET_ASSESSMENT_BY_SUBJECT_RESET:
+            return {}
 
         default:
             return state

@@ -94,6 +94,18 @@ export const HeaderContainer = styled.header`
         align-items: center;
         justify-content: flex-end;
         height: 100%;
+        .menuitem{
+            background-color: ${colors.sweetRed};
+            padding-left: 20px;
+            a{
+                color: ${colors.white};
+                font-weight: 800;
+                transition: transform 0.5s ease;
+                &:hover{
+                    transform: scale(1.2) 
+                }
+            }
+        }
         
         div{
             height: 100%;
@@ -109,6 +121,7 @@ export const HeaderContainer = styled.header`
             a.header__rightEnd{
                 border-right: none;
                 padding-left: 25px;
+                
             }
         }
         @media ${device.tablet}{

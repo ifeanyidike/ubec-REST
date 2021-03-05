@@ -7,6 +7,7 @@ import {
     GET_SUBJECTS_SUCCESS,
     GET_SUBJECT_BY_NAME_FAIL,
     GET_SUBJECT_BY_NAME_LOADING,
+    GET_SUBJECT_BY_NAME_RESET,
     GET_SUBJECT_BY_NAME_SUCCESS,
     GET_SUBJECT_FAIL,
     GET_SUBJECT_LOADING,
@@ -73,6 +74,9 @@ export const subjectByNameReducer = (state = {}, action) => {
 
         case GET_SUBJECT_BY_NAME_FAIL:
             return { loading: false, error: action.payload }
+
+        case GET_SUBJECT_BY_NAME_RESET:
+            return {}
 
         default:
             return state

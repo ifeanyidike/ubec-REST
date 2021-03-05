@@ -3,19 +3,17 @@ import BeenhereIcon from '@material-ui/icons/Beenhere';
 import { SubjectPane } from '../styles/TestSubjectStyles';
 import { useHistory } from 'react-router-dom'
 import Loader from "../components/Progress"
-import DialogMessage from '../components/DialogMessage'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSubjectByName } from '../redux/actions/subjectActions';
+import { GET_ASSESSMENT_BY_SUBJECT_RESET } from '../redux/constants/assessmentConstants';
+import { GET_SUBJECT_BY_NAME_RESET } from '../redux/constants/subjectConstants';
 
 const SubjectCard = ({ text, id }) => {
     const history = useHistory()
     const [checked, setChecked] = useState(false)
-    const [open, setOpen] = useState(false)
-    const [item, setItem] = useState('')
     const dispatch = useDispatch()
 
     const handleSubjectClick = () => {
-        setChecked(true)
         dispatch(getSubjectByName(text))
     }
 
@@ -24,36 +22,28 @@ const SubjectCard = ({ text, id }) => {
         error: subjectByNameError,
         subject } = subjectByName
 
-    console.log(subject)
-
-
-    // useEffect(() => {
-    //     if (subject && subject === null) {
-    //         setOpen(true)
-    //         setChecked(false)
-    //     }
-    // }, [subjectData])
+    useEffect(() => {
+        dispatch({ type: GET_ASSESSMENT_BY_SUBJECT_RESET })
+        dispatch({ type: GET_SUBJECT_BY_NAME_RESET })
+    }, [dispatch])
 
 
     useEffect(() => {
         if (subject) {
             history.push(`/testpane/?subjectId=${subject._id}`)
+        } else {
+            return
         }
-
     }, [history, subject])
-
-
 
     return (
         <SubjectPane onClick={handleSubjectClick}>
-            {checked && <Loader />}
+            {subjectByNameLoading && <Loader />}
+
             <span>{text}</span>
             <BeenhereIcon fontSize='large' style={{ display: checked ? 'block' : 'none' }} />
 
-            <DialogMessage open={open} setOpen={setOpen}>
 
-                There's no test available for this subject. Please choose another subject.
-            </DialogMessage>
         </SubjectPane>
     )
 }

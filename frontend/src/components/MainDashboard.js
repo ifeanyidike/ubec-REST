@@ -9,41 +9,41 @@ const MainDashboard = () => {
         <MainDashboardContainer>
             <OptionCard
                 iconColor={colors.sweetRed}
-                FaItemElement={<FaEdit class='faicon' />}
+                FaItemElement={<FaEdit className='faicon' />}
                 text='Take a test'
                 href='/subjects'
             />
 
             <OptionCard
                 iconColor={colors.sweetBlue}
-                FaItemElement={<FaVideo class='faicon' />}
+                FaItemElement={<FaVideo className='faicon' />}
                 text='Enter a class'
                 href='/videolessons'
             />
 
             <OptionCard
                 iconColor={colors.lightBrown}
-                FaItemElement={<FaUserLock class='faicon' />}
+                FaItemElement={<FaUserLock className='faicon' />}
                 text='View your profile'
             />
             <OptionCard
                 iconColor={colors.dye}
-                FaItemElement={<FaBook class='faicon' />}
+                FaItemElement={<FaBook className='faicon' />}
                 text='Read Books'
             />
             <OptionCard
                 iconColor={colors.orange}
-                FaItemElement={<FaPhotoVideo class='faicon' />}
+                FaItemElement={<FaPhotoVideo className='faicon' />}
                 text='Re-watch previous classes'
             />
             <OptionCard
                 iconColor={colors.orchid}
-                FaItemElement={<FaHistory class='faicon' />}
+                FaItemElement={<FaHistory className='faicon' />}
                 text='Do revision'
             />
             <OptionCard
                 iconColor={colors.gold}
-                FaItemElement={<FaComments class='faicon' />}
+                FaItemElement={<FaComments className='faicon' />}
                 text='Talk to a teacher'
             />
         </MainDashboardContainer>

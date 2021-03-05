@@ -27,7 +27,7 @@ export const getSubjectByName = asyncHandler(async (req, res) => {
     if (subject) {
         res.send(subject)
     } else {
-        throw new Error("Subject not found")
+        throw new Error("Subject not found or there is no assessment yet for the subject")
     }
 })
 

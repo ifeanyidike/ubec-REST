@@ -30,19 +30,17 @@ const SignIn = ({ setLogState }) => {
 
     const { schools } = useSelector(state => state.allSchools)
 
-    const [accountType, setAccountType] = useState('student')
-    const [studentSchool, setStudentSchool] = useState(schools && schools[0]._id);
-    const [teacherSchool, setTeacherSchool] = useState(schools && schools[0]._id);
 
-    const [studentUserName, setStudentUserName] = useState('')
+    const [accountType, setAccountType] = useState('student')
+    const [studentSchool, setStudentSchool] = useState('');
+    const [teacherSchool, setTeacherSchool] = useState('');
+    console.log(studentSchool)
     const [showStudentCode, setShowStudentCode] = useState('')
     const [studentCode, setStudentCode] = useState('')
 
     const [teacherUserName, setTeacherUserName] = useState('')
     const [showTeacherCode, setShowTeacherCode] = useState('')
     const [teacherCode, setTeacherCode] = useState('')
-
-    const [success, setSuccess] = useState(false)
 
     const handleStudentLogin = (e) => {
         e.preventDefault()
@@ -120,6 +118,9 @@ const SignIn = ({ setLogState }) => {
                                             <HomeIcon />
                                         </InputAdornment>}
                                 >
+                                    <option value="">
+                                        Please select a school
+                                        </option>
                                     {schools && schools.map((school) => (
                                         <option key={school._id} value={school._id}>
                                             {school.schoolName}
@@ -196,6 +197,9 @@ const SignIn = ({ setLogState }) => {
                                             <HomeIcon />
                                         </InputAdornment>}
                                 >
+                                    <option value="">
+                                        Please select a school
+                                        </option>
                                     {schools && schools.map((school) => (
                                         <option key={school._id} value={school._id}>
                                             {school.schoolName}

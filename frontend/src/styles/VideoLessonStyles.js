@@ -5,7 +5,7 @@ import { uniformStyle } from './GlobalStyles'
 export const VideoLessonsContainer = styled(uniformStyle)`
     display: grid;
     grid-gap: 20px;
-    padding: 0 50px;
+    padding: 50px;
 
     iframe{
         width: 100%;

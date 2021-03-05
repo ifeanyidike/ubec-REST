@@ -7,7 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { useHistory } from 'react-router-dom';
 
-export default function AlertDialog({ children, open, setOpen, back }) {
+export default function AlertDialog({ children, title, open, setOpen, back }) {
     const history = useHistory()
     const handleClose = () => {
         setOpen(false);
@@ -22,7 +22,7 @@ export default function AlertDialog({ children, open, setOpen, back }) {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+                <DialogTitle id="alert-dialog-title">{title}</DialogTitle>
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
                         {children}

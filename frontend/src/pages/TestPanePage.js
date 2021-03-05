@@ -25,6 +25,8 @@ const TestPanePage = () => {
     const [selectedAnswers, setSelectedAnswers] = useState([])
     const [time, setTime] = useState(2 * 1000 * 60)
 
+
+
     useEffect(() => {
         setTimeout(() => {
             if (time > 0) {
