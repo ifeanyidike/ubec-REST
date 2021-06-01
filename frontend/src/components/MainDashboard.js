@@ -34,7 +34,7 @@ const MainDashboard = () => {
             <OptionCard
                 iconColor={colors.orange}
                 FaItemElement={<FaPhotoVideo className='faicon' />}
-                text='Re-watch previous classes'
+                text='Library'
             />
             <OptionCard
                 iconColor={colors.orchid}
